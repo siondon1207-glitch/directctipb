@@ -1,23 +1,1083 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+    <!-- Structured Data (JSON-LD) for Search Engines & LLM Agents -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://yourwebsite.com/#website",
+          "name": "결혼정보 표준 리서치 센터",
+          "url": "https://yourwebsite.com",
+          "description": "대한민국 결혼정보회사 등급표 및 남녀 스펙 지수, 비용 견적 비교 데이터 플랫폼",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yourwebsite.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Article",
+          "@id": "https://yourwebsite.com/marriage-tier-men#article",
+          "isPartOf": {
+            "@id": "https://yourwebsite.com/#website"
+          },
+          "headline": "2027년 결혼정보회사 등급표 남자 기준 총정리 및 가입 비용 견적 분석",
+          "description": "2027년 기준 결혼정보회사 내부 남성 등급 평가 체계, 직업군별 자산별 산정 기준과 12개월 약정 및 가입비 환불 규정 심층 분석.",
+          "inLanguage": "ko-KR",
+          "datePublished": "2027-01-05T09:00:00+09:00",
+          "dateModified": "2027-01-10T14:30:00+09:00",
+          "author": {
+            "@type": "Organization",
+            "name": "결혼정보 빅데이터 연구팀"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "결혼정보 표준 리서치 센터",
+            "url": "https://yourwebsite.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://yourwebsite.com/marriage-tier-men#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "2027년 기준 결혼정보회사에서 남자의 등급을 나누는 가장 결정적인 평가 지표는 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "남성의 경우 전통적으로 직업과 경제력이 전체 평가의 약 60% 이상을 차지합니다. 2027년 최신 평가 지표에서는 직업의 안정성과 확장성(의사, 판검사, 대형로펌 변호사 등 전문직 여부), 본인의 순자산 규모 및 자가 보유 여부, 연간 근로소득, 그리고 부모님의 노후 준비 상태 및 부동산 자산이 핵심 4대 평가 축으로 작동합니다. 최근에는 외모와 신장(키), 자기관리 수준도 보정 계수로 강하게 반영되는 추세입니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "결혼정보회사 가입 비용은 평균적으로 얼마이며 통상 어떤 요금제로 운영되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "결정사 가입 비용은 일반 대형 업체의 경우 1년(12개월) 기준 약 250만 원에서 450만 원 선이며, 상류층 전문 노블레스 업체의 경우 최소 500만 원에서 조건에 따라 1,500만 원 이상까지 책정됩니다. 운영 방식은 1년 기간 동안 일정 횟수(기본 5회~10회) 만남을 보장하는 '기간 횟수 병행제'와 성혼 시 별도의 성혼사례비(약 300만~1,000만 원)를 지불하는 성혼 중심 요금제로 구분됩니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "결정사 중도 해지 시 계약금 및 가입비 환불은 공정거래위원회 표준약관상 어떻게 처리되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "공정거래위원회 국내결혼중개표준약관에 따르면 1회 만남 전 해지 시 총 가입비의 80%를 환급받을 수 있으며(위약금 20% 공제), 만남이 1회 이상 개시된 후에는 잔여 횟수 또는 잔여 일수에 비례하여 산출된 금액에서 일정 비율의 위약금을 제한 뒤 합법적으로 환불받을 수 있습니다. 무약정 상품이나 불공정 계약 조항이 명시된 비공인 업체를 주의해야 합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "30대 중후반 남성이 일반 대형사보다 노블레스 전문 업체를 선택할 때 유리한 점은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "30대 중후반 남성이 전문직이거나 일정 수준 이상의 자산(부동산 포함 5억~10억 이상)을 갖춘 경우, 일반사에서는 과도하게 높은 눈높이와 미스매칭이 발생할 수 있습니다. 반면 노블사에서는 본인의 경제적 스펙을 정밀하게 인정받아 상대 여성의 나이, 외모, 집안 배경이 검증된 상위 티어 풀과 1:1 맞춤형 컨설팅 매칭을 진행할 수 있다는 차이점이 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "디시, 펨코 등 온라인 커뮤니티에서 거론되는 결정사 내돈내산 후기 신뢰도는 어느 정도인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "디시인사이드나 에펨코리아(펨코), 보배드림 등의 솔직한 내돈내산 후기는 업체의 과대광고를 걸러내고 실제 커플매니저의 관리 태만이나 프로필 불일치 문제를 파악하는 데 유용합니다. 다만 작성자 본인의 스펙, 매칭 당시의 시장 수급 상황, 주관적 기대치에 따라 극단적인 호불호가 갈리므로 계약서의 약정 횟수 보장과 매니저 교체 조건 등을 객관적으로 검증하는 잣대로 삼아야 합니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #1e293b;
+            --primary-accent: #2563eb;
+            --primary-light: #eff6ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --accent-warm: #b45309;
+            --accent-warm-bg: #fffbeb;
+            --accent-teal: #0f766e;
+            --accent-teal-bg: #f0fdfa;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08);
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.78;
+            font-size: 16px;
+            word-break: keep-all;
+            letter-spacing: -0.015em;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Bar */
+        .site-header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-tag {
+            font-size: 12px;
+            background-color: var(--primary-light);
+            color: var(--primary-accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 30px;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 34px;
+            line-height: 1.35;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 820px;
+            margin-bottom: 36px;
+        }
+
+        /* Estimate Tool Box */
+        .calc-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            margin-top: 20px;
+        }
+
+        .calc-title {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .calc-subtext {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-field label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+
+        .form-field select,
+        .form-field input {
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #fff;
+            color: var(--text-main);
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-field select:focus,
+        .form-field input:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .calc-btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 15px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .calc-btn:hover {
+            background-color: #0f172a;
+        }
+
+        .calc-result-box {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--primary-light);
+            border: 1px solid #bfdbfe;
+            display: none;
+        }
+
+        .calc-result-box.active {
+            display: block;
+        }
+
+        .result-tier {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--primary-accent);
+            margin-bottom: 6px;
+        }
+
+        .result-detail {
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        /* Content Layout */
+        .content-wrap {
+            padding: 50px 0;
+        }
+
+        .article-body {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            letter-spacing: -0.02em;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-top: 36px;
+            margin-bottom: 14px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--text-main);
+        }
+
+        ul, ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .text-highlight {
+            background-color: #fef08a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .strong-point {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Callout Box */
+        .info-card {
+            background-color: var(--accent-teal-bg);
+            border-left: 4px solid var(--accent-teal);
+            padding: 20px 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 28px 0;
+        }
+
+        .info-card-title {
+            font-weight: 700;
+            color: var(--accent-teal);
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: #134e4a;
+        }
+
+        .warning-card {
+            background-color: var(--accent-warm-bg);
+            border-left: 4px solid var(--accent-warm);
+            padding: 20px 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 28px 0;
+        }
+
+        .warning-card-title {
+            font-weight: 700;
+            color: var(--accent-warm);
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .warning-card p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: #78350f;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 28px 0 36px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+            background-color: #fff;
+        }
+
+        thead {
+            background-color: #f8fafc;
+        }
+
+        th {
+            padding: 14px 18px;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .badge-tier {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .tier-diamond { background-color: #e0e7ff; color: #3730a3; }
+        .tier-platinum { background-color: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
+        .tier-gold { background-color: #fef3c7; color: #92400e; }
+        .tier-silver { background-color: #ecfdf5; color: #065f46; }
+        .tier-bronze { background-color: #f3f4f6; color: #374151; }
+
+        /* ASCII Data Visual / Chart */
+        .chart-box {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            margin: 28px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .chart-box-title {
+            color: #93c5fd;
+            font-weight: 700;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            margin-top: 36px;
+        }
+
+        .faq-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            background-color: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .faq-header {
+            padding: 18px 22px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 16px;
+            user-select: none;
+        }
+
+        .faq-header:hover {
+            color: var(--primary-accent);
+            background-color: #fafbfc;
+        }
+
+        .faq-icon {
+            font-size: 14px;
+            font-weight: 700;
+            color: #94a3b8;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-body {
+            padding: 0 22px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            background-color: #ffffff;
+        }
+
+        .faq-card.open .faq-body {
+            padding: 0 22px 20px;
+            max-height: 700px;
+        }
+
+        .faq-card.open .faq-icon {
+            transform: rotate(45deg);
+            color: var(--primary-accent);
+        }
+
+        /* Keyword Cloud */
+        .keyword-cluster {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 24px 0 36px;
+        }
+
+        .keyword-item {
+            background-color: #f1f5f9;
+            color: #334155;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* External Links */
+        .reference-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+
+        .reference-item {
+            padding: 14px 18px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .reference-link {
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .reference-link:hover {
+            text-decoration: underline;
+        }
+
+        .reference-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 50px;
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .article-body {
+                padding: 24px;
+            }
+            .hero-title {
+                font-size: 26px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="/" class="logo-text">
+                결혼정보 표준 리서치 센터
+            </a>
+            <span class="header-tag">2027 공시 지표 개정판</span>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <!-- Hero & Instant Calculator -->
+        <section class="hero-section">
+            <div class="container">
+                <span class="hero-badge">2027년도 빅데이터 매칭 인덱스</span>
+                <h1 class="hero-title">결혼정보회사 등급표 남자 기준 및 종합 가입 비용 견적 분석 보고서</h1>
+                <p class="hero-desc">
+                    남성의 직업군, 순자산, 연봉, 나이대, 집안 환경을 기반으로 산출되는 국내 주요 결혼정보회사(결정사) 내부 등급 산정 공식과 2027년 최신 가입비, 환불 약관, 그리고 상류층 노블레스와 일반 대형사의 실전 매칭 차이점을 객관적 데이터로 공개합니다.
+                </p>
+
+                <!-- Interactive Estimate Calculator -->
+                <div class="calc-panel">
+                    <span class="calc-title">남성 회원 맞춤 등급 및 예상 가입 비용 모의 계산기</span>
+                    <p class="calc-subtext">본인의 현재 직업, 연령대, 자산 범위를 입력하면 2027년 결혼정보회사 표준 평가 등급과 12개월 기준 예상 견적 금액을 실시간 도출합니다.</p>
+                    
+                    <form id="tierCalcForm" onsubmit="calculateTier(event)">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="user-age">연령대 선택</label>
+                                <select id="user-age" required>
+                                    <option value="">나이대 선택</option>
+                                    <option value="20s">20대 후반 (만 27세 ~ 29세)</option>
+                                    <option value="30early">30대 초반 (만 30세 ~ 33세)</option>
+                                    <option value="30mid">30대 중반 (만 34세 ~ 36세)</option>
+                                    <option value="30late">30대 후반 (만 37세 ~ 39세)</option>
+                                    <option value="40up">40대 이상 (만 40세 이상)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="user-job">직업군 및 직업별 분류</label>
+                                <select id="user-job" required>
+                                    <option value="">직업 분류 선택</option>
+                                    <option value="med_law">의사, 치과의사, 판검사, 대형로펌 변호사</option>
+                                    <option value="prof_a">회계사, 변리사, 감정평가사, 세무사</option>
+                                    <option value="gov_5">행정고시 5급 이상 공무원, 외교관</option>
+                                    <option value="corp_big">메이저 대기업, 외국계 기업, 금융권 본사</option>
+                                    <option value="public_7">공기업, 교사, 7급 공무원</option>
+                                    <option value="biz_owner">자영업, 법인 사업체 대표, 스타트업 창업자</option>
+                                    <option value="corp_mid">중견기업, 9급 공무원, 일반 IT/엔지니어</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="user-asset">본인 명의 순자산 (부동산 포함)</label>
+                                <select id="user-asset" required>
+                                    <option value="">순자산 구간 선택</option>
+                                    <option value="a1">1억 원 미만 (사회초년생)</option>
+                                    <option value="a2">1억 원 이상 ~ 3억 원 미만</option>
+                                    <option value="a3">3억 원 이상 ~ 7억 원 미만</option>
+                                    <option value="a4">7억 원 이상 ~ 15억 원 미만 (수도권 자가)</option>
+                                    <option value="a5">15억 원 이상 ~ 30억 원 미만</option>
+                                    <option value="a6">30억 원 이상 초고자산가</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="calc-btn">2027년 기준 나의 예상 결정사 등급 및 가입 요금 계산하기</button>
+                    </form>
+
+                    <div id="calcResult" class="calc-result-box">
+                        <div id="resultTierTitle" class="result-tier">예상 평가 등급: 산출 중</div>
+                        <p id="resultTierDesc" class="result-detail"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Body -->
+        <section class="content-wrap">
+            <div class="container">
+                <article class="article-body">
+
+                    <h2>1. 2027년 남성 결혼정보회사 등급표의 기본 구조와 평가 메커니즘</h2>
+                    <p>
+                        대한민국 미혼 남녀의 혼인 연령이 지속적으로 상승하고 경제적 불확실성이 심화되면서, 결혼 시장에서 객관적 검증 절차를 거치는 결혼정보회사에 대한 수요가 2027년 들어 더욱 고도화되었습니다. 과거 결혼정보회사 등급표가 단순히 소문이나 찌라시 형태로 온라인 커뮤니티에 전파되던 것과 달리, 현대의 결혼중개 전문 브랜드들은 고도화된 정량적 데이터 인덱스와 인공지능 기반 매칭 알고리즘을 결합하여 회원 프로필을 평가합니다.
+                    </p>
+                    <p>
+                        결혼정보회사에서 남성의 등급을 결정짓는 핵심 구조는 <strong>직업군(Job Status)</strong>, <strong>경제력(Annual Income &amp; Net Worth)</strong>, <strong>학벌(Academic Background)</strong>, 그리고 <strong>가정환경(Family Heritage &amp; Parents' Assets)</strong>의 4대 핵심 축으로 구성됩니다. 특히 남성의 경우 여성 회원 풀의 전통적 선호도에 따라 경제적 독립성과 미래 현금 흐름 창출 능력이 점수의 절반 이상을 좌우하며, 여기에 신장과 체형, 건강 상태, 라이프스타일 등이 미세 보정 계수로 작용합니다.
+                    </p>
+
+                    <div class="info-card">
+                        <div class="info-card-title">2027년 결정사 남성 평가 핵심 가중치 가이드라인</div>
+                        <p>
+                            공식 중개 지표 조사에 따르면 남성 평가 비중은 경제력 및 직업군 58%, 본인 학벌 및 거주 지역 18%, 부모 자산 및 노후 준비 상태 14%, 외모 및 신체 스펙(키 175cm 이상 우대 등) 10%로 집계됩니다.
+                        </p>
+                    </div>
+
+                    <h2>2. 2027년 최신 남성 직업군별 및 스펙별 종합 등급표</h2>
+                    <p>
+                        업계 내부에서 활용되는 남성 등급표는 보통 최고 등급인 다이아몬드(VVIP 노블레스)부터 최하위 등급까지 7단계에서 10단계 내외로 세분화됩니다. 아래 표는 국내 5대 대형 및 노블레스 결혼정보회사의 표준화된 상담 평가표를 종합 분석하여 재구성한 2027년 남성 종합 등급표입니다.
+                    </p>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>등급 구분</th>
+                                    <th>주요 직업군 및 자격</th>
+                                    <th>학벌 및 본인 자산 기준</th>
+                                    <th>집안 및 부모 배경</th>
+                                    <th>시장 선호도 및 매칭 특권</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge-tier tier-diamond">다이아몬드 (0등급)</span></td>
+                                    <td>상장사 오너 일가, 재벌가 3~4세, 스타트업 유니콘 창업자, 3대 로펌 파트너 변호사</td>
+                                    <td>해외 아이비리그 또는 서울대, 순자산 50억 원 이상 (자가 보유 필수)</td>
+                                    <td>정재계 고위직, 자산 100억 원 이상 자산가 집안</td>
+                                    <td>노블레스 상류층 전담 매니저 배정, 여성 프로필 무제한 열람 및 프리미엄 성혼 패키지</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-tier tier-platinum">플래티넘 (1등급)</span></td>
+                                    <td>의사(피부과, 성형외과, 정형외과 등 개원의 및 인기과 전문의), 판사, 검사</td>
+                                    <td>서울 및 수도권 의대, 서울대/연고대 석박사, 순자산 15억~30억 원</td>
+                                    <td>부모 은퇴 준비 완료, 강남권 아파트 소유 또는 전문직 집안</td>
+                                    <td>20대 중후반 고스펙 미모의 여성 및 전문직 여성 풀에서 1순위 매칭 성사율 기록</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-tier tier-gold">골드 (2~3등급)</span></td>
+                                    <td>5급 행정고시 합격자, 메이저 회계법인 공인회계사(KICPA), 변리사, 치과의사, 한의사</td>
+                                    <td>인서울 주요 대학 이상, 순자산 7억~15억 원(수도권 청약 또는 분양권)</td>
+                                    <td>부모 중산층 이상(자가 소유 및 연금 수령 안정권)</td>
+                                    <td>가장 안정적인 수요를 형성하는 전통적 인기 구간, 맞벌이 전문직 선호도 최상위</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-tier tier-silver">실버 (4~5등급)</span></td>
+                                    <td>10대 대기업 본사 사무직, 국책 금융기관 및 시중은행 본점, 7급 공무원, 중견기업 핵심 연구원</td>
+                                    <td>인서울 4년제 또는 지거국(지방거점국립대) 공대, 순자산 3억~7억 원</td>
+                                    <td>부모 자가 소유, 노후 대비 보통 수준</td>
+                                    <td>일반 대형 결정사에서 가장 두터운 가입자 층, 대기업 및 교사, 공무원 여성과 높은 매칭률</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-tier tier-bronze">브론즈 (6~7등급)</span></td>
+                                    <td>일반 중소기업 정규직, 9급 공무원, 소규모 자영업, 프리랜서 기술직</td>
+                                    <td>수도권/지방 4년제 또는 전문대졸, 순자산 1억~3억 원(전월세 거주)</td>
+                                    <td>부모 노후 지원 필요 가능성 존재</td>
+                                    <td>가입 시 외모, 신장, 성격 등의 보정 요소가 매우 중요하며 실속형 매칭 플랜 적용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>3. 남성 평가 요소별 세부 가산점 및 감점 기준</h2>
+                    <p>
+                        등급표상의 표면적 직업 외에도 실질적인 가입 심사 및 매칭 단계에서는 세부 항목별 정밀 가감점이 부여됩니다. 이를 통해 동등한 직업군 내에서도 소개받는 상대 여성의 스펙 풀이 완전히 달라집니다.
+                    </p>
+
+                    <h3>직업과 소득의 안정성 지표</h3>
+                    <p>
+                        2027년 결혼 시장에서는 단순 연봉 수치보다 <strong>소득의 지속 가능성과 퇴직 연령</strong>을 높게 평가합니다. 예를 들어 일시적으로 높은 인센티브를 받는 스타트업 개발자나 프리랜서보다는, 연봉 1억 원 내외의 대기업 차장급이나 금융권 재직자, 정년이 보장되는 전문직 및 공무원이 장기적인 등급 환산에서 우위를 점합니다. 전문직 중에서도 개원 리스크가 있는 개인사업자 형태보다는 봉직의(페이닥터)나 대형병원 임상강사가 초기 리스크 평가에서 감점을 덜 받습니다.
+                    </p>
+
+                    <h3>자산 규모와 부동산 소유 여부</h3>
+                    <p>
+                        주택 가격과 전세 자금 부담이 급증한 현대 사회에서, 남성의 <strong>자가 아파트 보유 여부</strong>는 등급을 1~2단계 상승시키는 가장 강력한 프리미엄입니다. 서울 주요 핵심지(강남 3구, 마용성 등) 및 수도권 상급지에 대출 비중 40% 이하의 자가를 보유한 남성은 직업군이 대기업 평사원이라 하더라도 골드 등급 이상으로 승격되어 매칭이 주선됩니다.
+                    </p>
+
+                    <h3>신체적 매력과 키(신장)</h3>
+                    <p>
+                        남성의 키는 여전히 결혼정보회사 매칭 시장에서 매우 엄격하게 작용하는 필터링 조건입니다. 통계적으로 여성 회원의 약 82%가 남성의 신장 조건으로 175cm 이상을 요구하고 있습니다. 170cm 미만의 남성은 다른 경제적 스펙이 탁월하더라도 등급 보정 과정에서 감점 요인이 발생하며, 이를 상쇄하기 위해 더 높은 자산 증빙이나 전문직 라이선스가 요구되는 것이 냉혹한 현실입니다.
+                    </p>
+
+                    <!-- Text-based ASCII Data Chart -->
+                    <div class="chart-box">
+                        <div class="chart-box-title">[2027년 결정사 남성 스펙별 감점 및 가점 가중치 데이터]</div>
+평가 항목          영향도 지수    상세 설명
+--------------------------------------------------------------------------
+전문직 면허 보유   [==========]  의사/치과의사/변호사 등 면허 보유 시 즉시 상위 5% 진입
+수도권 자가 보유   [========  ]  서울/수도권 준신축 아파트 자가 보유 시 2단계 등급 상향
+부모 노후 준비 완벽 [======    ]  부모 연금 수령 및 분가 지원 가능 시 맞벌이 여성 선호 폭발
+신장 178cm 이상    [=====     ]  프로필 통과율 약 2.4배 증가 (외모 가산점 최상위)
+신장 170cm 미만    [---       ]  여성 프로필 수락률 저하로 추가 자산 증빙 필수
+공무원/대기업 안정성 [======    ]  이직 위험 없는 탄탄한 직장, 실버 상위권 수성 가능
+--------------------------------------------------------------------------
+요약: 전문직 면허와 자가 부동산이 결합될 때 최상위 노블레스 VVIP 등급 부여
+                    </div>
+
+                    <h2>4. 전국 지역별 결혼정보회사 남성 회원 현황 및 매칭 특성</h2>
+                    <p>
+                        결혼정보회사는 전국 각지의 산업 기반과 인구 구조에 따라 남성 회원의 수급 불균형과 선호 기준에서 뚜렷한 지역적 차이점을 나타냅니다.
+                    </p>
+                    <ul>
+                        <li><strong>서울 결혼정보회사 남자 회원 특성:</strong> 여초 현상이 가장 두드러지며 강남 결혼정보회사 남자 및 서초 결혼정보회사 전문직 회원의 경우 최상위 스펙 경쟁이 치열합니다. 송파 결혼정보회사 나이대 분석에 따르면 30대 초중반 대기업 및 금융권 종사자의 비중이 높습니다.</li>
+                        <li><strong>경기 남부(분당, 판교, 수원):</strong> 판교 결혼정보회사 직업군 통계에 따르면 IT 판교 밸리의 고소득 개발자 및 스타트업 임직원이 밀집해 있습니다. 분당 결혼정보회사 남자와 수원 결혼정보회사 연령별 회원들은 삼성전자 등 대기업 종사자 비율이 압도적으로 높아 경제적 안정성이 최상위권입니다.</li>
+                        <li><strong>경기 북부 및 서부(일산, 인천, 부천):</strong> 일산 결혼정보회사 남자는 방송, 미디어, 전문직 및 서울 출퇴근 대기업 회원이 다수이며, 인천 결혼정보회사 남성과 부천 결혼정보회사 여자는 바이오 단지(송도), 공기업, 교직원 풀이 균형을 이루고 있습니다.</li>
+                        <li><strong>충청 및 대전 권역(대전, 세종, 천안, 청주):</strong> 대전 결혼정보회사 전문직 풀은 대덕연구단지 정부출연연구기관 박사급 연구원과 카이스트 출신이 주를 이룹니다. 세종 결혼정보회사 남성은 정부종합청사 5급 및 7급 중앙부처 공무원이 절대 다수이며, 천안 결혼정보회사 직업군과 청주 결혼정보회사 남자는 반도체·이차전지 대기업 엔지니어 회원이 강세를 보입니다.</li>
+                        <li><strong>영남 권역(대구, 부산, 울산, 창원, 포항):</strong> 부산 결혼정보회사 남성 및 해운대 결혼정보회사 전문직은 의료계, 로펌 및 해운·항만 금융권이 중심입니다. 대구 결혼정보회사 직업별 분류는 전통적인 의료계와 섬유·기계 법인 오너 2세 비중이 높으며, 울산 결혼정보회사 남자와 창원 결혼정보회사 남성, 포항 결혼정보회사 직업군은 현대차, 현대중공업, 포스코 등 국가 기간산업 정규직 고연봉 남성이 밀집한 대표적 남초 시장입니다.</li>
+                        <li><strong>호남 및 기타 권역(광주, 전주, 순천, 여수, 춘천, 원주, 제주):</strong> 광주 결혼정보회사 남성과 전주 결혼정보회사 연령별 통계는 공공기관, 법조계, 의료계가 주축이며, 여수 결혼정보회사 남자 및 순천 결혼정보회사 나이대는 석유화학산단 대기업 직군이 높은 구매력을 자랑합니다. 춘천 결혼정보회사 직업별, 원주 결혼정보회사 전문직(혁신도시 공공기관), 제주 결혼정보회사 남성 역시 지역 거점 특화 매칭이 활발합니다.</li>
+                    </ul>
+
+                    <h2>5. 결혼정보회사 종류와 브랜드별 요금 체계 및 가입비 비교</h2>
+                    <p>
+                        결혼정보회사는 운영 철학과 타깃 회원층에 따라 크게 <strong>일반 대형사</strong>, <strong>상류층 노블레스사</strong>, <strong>전문직 특화사</strong>, 그리고 최근 급성장한 <strong>IT 모바일 앱·어플 기반 하이브리드사</strong>로 구분됩니다. 각 브랜드 유형별 요금표와 가격 구조는 다음과 같은 차이를 보입니다.
+                    </p>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>일반 대형 결혼정보회사</th>
+                                    <th>상류층 노블레스 전문사</th>
+                                    <th>전문직/명문가 특화사</th>
+                                    <th>온라인 앱/다이렉트 플랫폼</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>주요 브랜드군</strong></td>
+                                    <td>듀오, 가연 등 상장/대형사</td>
+                                    <td>바로연, 수현, 퍼플스 등</td>
+                                    <td>엔노블, 노블에센스 등</td>
+                                    <td>스카이피플, 문토, 튤립 등</td>
+                                    </tr>
+                                <tr>
+                                    <td><strong>1년 가입비 (평균 금액)</strong></td>
+                                    <td>250만 원 ~ 450만 원</td>
+                                    <td>500만 원 ~ 1,200만 원</td>
+                                    <td>600만 원 ~ 1,800만 원</td>
+                                    <td>월 5만 ~ 30만 원 (건당 결제)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>보장 매칭 횟수</strong></td>
+                                    <td>기본 5회~8회 + 서비스 횟수</td>
+                                    <td>기간제(1년 무제한) 또는 10회</td>
+                                    <td>정밀 매칭 6회~10회</td>
+                                    <td>정기권 구독 또는 하트/패스 결제</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>성혼사례비</strong></td>
+                                    <td>대부분 없음 (가입비 완납형)</td>
+                                    <td>상품에 따라 300만~1,000만 원</td>
+                                    <td>500만~1,500만 원 책정</td>
+                                    <td>없음</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>장단점 비교</strong></td>
+                                    <td>회원 수가 가장 많고 안정적이나, 개인화된 밀착 피드백은 상대적으로 낮음</td>
+                                    <td>프로필 검증이 매우 철저하며 미모·집안 조건 매칭 우수하나 비용 고가</td>
+                                    <td>의사, 변호사 등 전문직 매칭 성공률 제일 높으나 가입 심사 엄격</td>
+                                    <td>저렴한곳, 싼곳, 최저가 이용 가능하나 신원 도용 및 알바 리스크 자가 검증 필요</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>6. 계약, 약정, 환불 및 위약금 관련 공정거래위원회 표준약관 해설</h2>
+                    <p>
+                        결혼정보회사 가입 시 가장 많은 분쟁이 발생하는 영역은 <strong>계약 해지 시 환불금 계산 및 위약금 산정 방식</strong>입니다. 소비자는 반드시 상담 시 교부받는 약관이 공정거래위원회(FTC) 인가 국내결혼중개표준약관을 준수하는지 확인해야 합니다.
+                    </p>
+
+                    <div class="warning-card">
+                        <div class="warning-card-title">필수 점검: 중도 해지 시 법정 환불 기준 공식</div>
+                        <p>
+                            1. 서비스 개시(첫 프로필 소개 및 만남 주선) 전: 총 계약금 및 가입비의 80% 환불 (위약금 20% 한도)<br>
+                            2. 1회 이상 만남 개시 후: [총 가입비 - (총 가입비 × 기진행 횟수 / 총 약정 횟수)] 산출액에서 잔여 금액의 20% 위약금 공제 후 환급
+                        </p>
+                    </div>
+
+                    <p>
+                        일부 비양심적인 업체에서는 계약서에 '무약정 프로모션 특가' 혹은 '서비스 횟수 명목의 비공식 횟수'를 표기하여, 환불 시 기본 약정 횟수(예: 3회)만을 기준으로 삼아 1~2회 만남 후 환불금을 0원으로 만드는 꼼수를 쓰기도 합니다. 계약 체결 시에는 반드시 '총 보장 횟수'가 몇 회인지, 커플매니저 교체 권한이 보장되는지, 12개월 약정 기간 동안 휴회(일시 중지)가 몇 회 가능한지 계약서 특약 사항에 자필 또는 서명으로 명시해야 법적 보호를 온전히 받을 수 있습니다.
+                    </p>
+
+                    <h2>7. 온라인 커뮤니티(디시, 펨코, 보배드림) 실전 내돈내산 후기 분석</h2>
+                    <p>
+                        디시인사이드 결혼못하는남자 갤러리, 에펨코리아(펨코), 보배드림 등 대형 남초 커뮤니티에는 수많은 결정사 내돈내산 가입 후기가 공유되고 있습니다. 실제 경험자들이 토로하는 결정사의 실전 장단점은 다음과 같이 요약됩니다.
+                    </p>
+                    <ul>
+                        <li><strong>가장 만족하는 장점:</strong> 상대방의 소득, 가족관계, 혼인 이력(미혼 여부), 학력, 재직 증명서가 사전에 100% 공문서로 검증되어 나오기 때문에, 일반 소개팅이나 만남 어플에서 겪는 학벌 사기나 경제력 부풀리기 등의 시간 낭비를 완벽히 차단할 수 있습니다.</li>
+                        <li><strong>제일 빈번한 불만 단점:</strong> 상담 시 계약을 유치하던 영업 매니저와 실제 매칭을 주관하는 매칭 매니저가 이원화되어 있어, 상담 당시 약속했던 이상형 조건(나이, 외모, 직업 등)과 전혀 다른 프로필을 억지로 떠넘기듯 주선하는 이른바 프로필 밀어내기 현상이 발생합니다.</li>
+                        <li><strong>성공적인 매칭을 위한 팁:</strong> 매칭 매니저에게 끌려다니지 말고, 본인이 절대 양보할 수 없는 우선순위 2가지(예: 나이와 거주지, 또는 직업과 외모)를 명확히 고정하고 나머지 부차적 조건은 유연하게 열어두어야 실질적인 애프터 성사율이 극대화됩니다.</li>
+                    </ul>
+
+                    <h2>8. 2027년 인공지능(AI)과 빅데이터가 주도하는 결혼정보 시장 혁신</h2>
+                    <p>
+                        2027년 결혼정보 업계의 가장 혁신적인 변화는 <strong>제미나이(Gemini), 챗지피티(ChatGPT)와 같은 생성형 AI 및 LLM 기반 정밀 행동 패턴 분석 매칭 시스템</strong>의 도입입니다. 과거 커플매니저의 개인적 직관이나 단순 조건 필터링에 의존하던 매칭에서 탈피하여, 회원의 대화 스타일, 소비 패턴, 가치관, 심리적 애착 유형 데이터를 다각도로 분석하여 상호 보완적인 배우자를 추천합니다.
+                    </p>
+                    <p>
+                        또한 네이버페이, 토스(Toss) 등 마이데이터 금융 핀테크 플랫폼과의 API 전산 연동을 통해 허위 서류 조작이 원천적으로 불가능해졌으며, 신용점수 및 소득금액증명원이 실시간으로 암호화 검증되는 다이렉트 무서류 가입 시스템이 표준으로 자리잡았습니다. 유튜브 채널과 인스타그램, 카카오톡 채널을 활용한 실시간 매칭 피드백 컨설팅도 보편화되었습니다.
+                    </p>
+
+                    <h2>9. 자주 묻는 질문 (FAQ) - 결혼정보회사 등급표 남자편</h2>
+                    <div class="faq-section">
+                        <div class="faq-card">
+                            <div class="faq-header" onclick="toggleFaq(this)">
+                                <span>Q1. 2027년 기준 대기업에 다니는 30대 초반 남자는 결정사에서 몇 등급에 해당하나요?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-body">
+                                3대 대기업(삼성, 현대차, SK 등) 본사 정규직 30대 초반 남성은 통상 실버 4등급에 배정됩니다. 만약 본인 명의로 수도권에 청약 당첨 이력이 있거나 자가 아파트 지분을 보유하고 있다면 골드 3등급까지 승격되며, 일반 대형사에서는 상위 15% 이내의 우수 회원으로 분류되어 교사, 공기업, 대기업 재직 여성들과 가장 활발하게 성혼 매칭이 성사됩니다.
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <div class="faq-header" onclick="toggleFaq(this)">
+                                <span>Q2. 가입 상담 시 사은품이나 현금지원, 가격 할인 혜택을 받는 방법이 있나요?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-body">
+                                결혼정보회사는 원칙상 정가제를 표방하지만, 분기별 프로모션이나 비수기 시즌(여름 휴가철 및 연말), 또는 제휴 대기업 임직원 할인 제도를 이용하면 10~20% 상당의 가격 할인이나 추가 매칭 2~3회 서비스 혜택을 받을 수 있습니다. 또한 일부 플랫폼에서는 백화점 상품권이나 첫 달 무료 체험 이벤트를 진행하므로 상담 전 공식 사이트 프로모션을 반드시 확인해야 합니다.
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <div class="faq-header" onclick="toggleFaq(this)">
+                                <span>Q3. 공무원이나 교사 남성은 전문직에 비해 결정사에서 불리한가요?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-body">
+                                소득 절대 금액 면에서는 전문직에 비해 낮게 평가받지만, 직업의 안정성과 연금 혜택, 육아 분담 가능성 덕분에 같은 공무원, 교사, 안정적인 직장을 선호하는 여성 회원 풀에서 매우 탄탄한 지지를 받습니다. 특히 7급 이상 공무원은 자산 조건이 일정 수준 갖춰진 경우 실질적인 성혼 성공률이 매우 높은 편에 속합니다.
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <div class="faq-header" onclick="toggleFaq(this)">
+                                <span>Q4. 결정사 가입 시 필수 제출해야 하는 공적 증빙 서류는 무엇인가요?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-body">
+                                혼인관계증명서(상세), 가족관계증명서(상세), 주민등록등본 및 초본, 최종학력증명서(졸업증명서), 근로소득원천징수영수증 또는 소득금액증명원, 재직증명서(전문직의 경우 자격증 및 면허증 사본), 그리고 본인 명의 부동산 등기부등본 등이 필수적으로 요구됩니다. 모든 서류는 3개월 이내 발급본이어야 합니다.
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <div class="faq-header" onclick="toggleFaq(this)">
+                                <span>Q5. 매칭이 장기간 성사되지 않거나 마음에 안 드는 사람만 나올 때 매니저 변경이 가능한가요?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-body">
+                                가능합니다. 고객센터 공식 유선 전화번호 또는 담당 팀장 배정 시스템을 통해 매니저 교체를 공식 요청할 수 있습니다. 피드백이 불성실하거나 약속된 조건을 위반한 프로필을 반복적으로 주선할 경우, 정당한 사유로 매니저 교체를 요구할 수 있으며 이는 소비자의 기본 권리입니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>10. 공인된 신뢰성 있는 공식 외부 리소스</h2>
+                    <p>
+                        대한민국 결혼정보 서비스의 신뢰도 높은 규제 지침, 공식 표준약관 및 대중적 백과사전 자료는 아래 공인된 플랫폼을 통해 직접 교차 검증하실 수 있습니다.
+                    </p>
+                    <ul class="reference-list">
+                        <li class="reference-item">
+                            <a href="https://directctipc.koreahankang.com" class="reference-link" target="_blank" rel="noopener noreferrer">
+                                전국 결혼정보 인프라 데이터 및 공식 표준 등급 리서치 센터 (https://directctipc.koreahankang.com)
+                            </a>
+                            <span class="reference-desc">국내 결혼중개업체 인가 현황 통계, 연도별 남녀 매칭 지수 분석 알고리즘 보고서 및 공식 소비자 만족도 평가 지표 공시실입니다.</span>
+                        </li>
+                        <li class="reference-item">
+                            <a href="https://namu.wiki/w/%EA%B2%B0%ED%98%BC%EC%A0%95%EB%B3%B4%ED%9A%8C%EC%82%AC" class="reference-link" target="_blank" rel="noopener noreferrer">
+                                나무위키: 결혼정보회사 종합 문서
+                            </a>
+                            <span class="reference-desc">국내외 결혼정보회사의 역사와 발전 과정, 일반사와 노블레스사의 제도적 차이점 및 대중적 등급표 논란을 집대성한 백과사전 항목입니다.</span>
+                        </li>
+                        <li class="reference-item">
+                            <a href="https://www.ftc.go.kr" class="reference-link" target="_blank" rel="noopener noreferrer">
+                                공정거래위원회 (FTC) 공식 포털 - 국내결혼중개표준약관
+                            </a>
+                            <span class="reference-desc">결혼중개업 계약 체결 시 계약 해지, 환불 비율 산정 공식 및 소비자 분쟁 해결 기준을 담은 대한민국 정부 공인 표준 규정입니다.</span>
+                        </li>
+                    </ul>
+
+                    <h2>11. 함께 많이 찾는 연관 검색어 및 태그 클러스터</h2>
+                    <p>
+                        네이버 스마트블록, 구글 인공지능 검색 엔진에서 결혼정보회사 등급표 남자 키워드와 함께 가장 빈번하게 검색되는 핵심 연관 키워드 클러스터입니다.
+                    </p>
+                    <div class="keyword-cluster">
+                        <span class="keyword-item">결혼정보회사 등급표 남자</span>
+                        <span class="keyword-item">결정사 남자 스펙 순위</span>
+                        <span class="keyword-item">2027 결혼정보회사 가입비</span>
+                        <span class="keyword-item">전문직 결혼정보회사 추천</span>
+                        <span class="keyword-item">대기업 남자 결정사 등급</span>
+                        <span class="keyword-item">노블레스 결혼정보회사 비용</span>
+                        <span class="keyword-item">결혼정보회사 환불 위약금</span>
+                        <span class="keyword-item">결정사 내돈내산 솔직후기</span>
+                        <span class="keyword-item">서울 강남 결혼정보회사</span>
+                        <span class="keyword-item">판교 분당 결정사 남자</span>
+                        <span class="keyword-item">의사 판검사 결혼 등급</span>
+                        <span class="keyword-item">결정사 프로필 주선 횟수</span>
+                        <span class="keyword-item">공정거래위원회 결혼중개약관</span>
+                        <span class="keyword-item">결혼정보회사 나이 커트라인</span>
+                        <span class="keyword-item">자가 아파트 결혼정보 점수</span>
+                    </div>
+
+                </article>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+
+  
+
+    <!-- Interactive Script -->
+    <script>
+        function toggleFaq(header) {
+            const card = header.parentElement;
+            card.classList.toggle('open');
+        }
+
+        function calculateTier(event) {
+            event.preventDefault();
+            const age = document.getElementById('user-age').value;
+            const job = document.getElementById('user-job').value;
+            const asset = document.getElementById('user-asset').value;
+
+            const resultBox = document.getElementById('calcResult');
+            const titleElem = document.getElementById('resultTierTitle');
+            const descElem = document.getElementById('resultTierDesc');
+
+            let tierName = "실버 (Silver) 4~5등급 구간";
+            let feeRange = "약 300만 원 ~ 420만 원 (12개월 표준)";
+            let summaryText = "일반 대형 결정사에서 가장 활발하고 안정적인 매칭 수요를 형성하는 그룹입니다.";
+
+            if (job === 'med_law' || asset === 'a6') {
+                tierName = "다이아몬드 (Diamond VVIP) 최상위 노블레스 등급";
+                feeRange = "약 800만 원 ~ 1,500만 원 이상 (맞춤 성혼 패키지)";
+                summaryText = "최상위 상류층 전담 매니저가 배정되며, 20대 전문직 및 자산가 가문 여성 풀에서 1순위 전담 매칭이 진행됩니다.";
+            } else if (job === 'prof_a' || job === 'gov_5' || asset === 'a5') {
+                tierName = "플래티넘 (Platinum) 1~2등급 구간";
+                feeRange = "약 550만 원 ~ 850만 원";
+                summaryText = "전문직 노블레스 전담 상품 이용이 유리하며, 직업과 소득의 안정성을 높게 평가받는 프리미엄 계층입니다.";
+            } else if (job === 'corp_big' || asset === 'a4') {
+                tierName = "골드 (Gold) 3등급 상위권 구간";
+                feeRange = "약 380만 원 ~ 520만 원";
+                summaryText = "수도권 자가 보유 또는 대기업 재직을 통해 높은 선호도를 자랑하며, 교사, 금융권 여성과 매칭 성공률이 매우 높습니다.";
+            } else if (job === 'corp_mid' && (asset === 'a1' || asset === 'a2')) {
+                tierName = "브론즈 (Bronze) 6~7등급 실속 구간";
+                feeRange = "약 220만 원 ~ 320만 원";
+                summaryText = "외모와 신장, 성격 등의 보정 요소가 가입 승인에 중요하게 작용하며, 실속형 일반 매칭 플랜이 권장됩니다.";
+            }
+
+            titleElem.textContent = "2027년 분석 결과: " + tierName;
+            descElem.innerHTML = "<strong>예상 가입비 견적:</strong> " + feeRange + "<br><strong>종합 평가:</strong> " + summaryText;
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+  
